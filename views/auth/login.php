@@ -1,14 +1,4 @@
-<?php
-require_once '../../controllers/AuthController.php';
-
-$error = "";
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $auth = new AuthController();
-    $error = $auth->login($_POST['email'], $_POST['password']);
-}
-?>
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,14 +8,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <h2>Login</h2>
 
-<?php if ($error): ?>
-    <p style="color:red"><?= $error ?></p>
-<?php endif; ?>
+<?php
+if (isset($_SESSION['error'])) {
+    echo "<p style='color:red'>" . $_SESSION['error'] . "</p>";
+    unset($_SESSION['error']);
+}
+?>
 
-<form method="POST">
+<form method="POST" action="../../controllers/AuthController.php">
     <input type="email" name="email" required placeholder="Email"><br><br>
     <input type="password" name="password" required placeholder="Password"><br><br>
-    <button type="submit">Login</button>
+    <button type="submit" name="login">Login</button>
 </form>
 
 </body>
