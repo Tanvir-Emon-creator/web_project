@@ -2,6 +2,7 @@
 session_start();
 require_once __DIR__ . '/../models/User.php';
 
+
 // LOGOUT HANDLING
 if (isset($_GET['action']) && $_GET['action'] === 'logout') {
     $auth = new AuthController();

@@ -10,6 +10,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
 
 $propertyModel = new Property();
 $properties = $propertyModel->getAll();
+require_once __DIR__ . '/../layouts/header.php';
 ?>
 
 <!DOCTYPE html>
@@ -58,3 +59,7 @@ $properties = $propertyModel->getAll();
 
 </body>
 </html>
+<?php
+// Include footer
+require_once __DIR__ . '/../layouts/footer.php';
+?>

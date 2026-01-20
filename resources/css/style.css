@@ -1,0 +1,99 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* BODY & DARK MODE */
+body {
+    background: #f4f6f8;
+    color: #222;
+    transition: all 0.3s ease;
+}
+
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #1f2937;
+    color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+#themeToggle {
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 15px;
+}
+
+/* CARD */
+.card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+body.dark .card {
+    background: #1e1e1e;
+}
+
+/* BUTTONS */
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+/* INPUTS & TEXTAREA */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    padding: 15px;
+    background: #e5e7eb;
+    margin-top: 40px;
+}
+
+body.dark .footer {
+    background: #1a1a1a;
+}

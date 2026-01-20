@@ -26,6 +26,7 @@ if ($keyword) {
         stripos($p['description'], $keyword) !== false
     );
 }
+require_once __DIR__ . '/../layouts/header.php';
 ?>
 
 
@@ -81,3 +82,7 @@ if ($keyword) {
 
 </body>
 </html>
+<?php
+// Include footer
+require_once __DIR__ . '/../layouts/footer.php';
+?>

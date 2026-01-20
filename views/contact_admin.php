@@ -129,6 +129,7 @@ if ($_SESSION['role'] === 'admin') {
 } elseif ($_SESSION['role'] === 'renter') {
     echo '<a href="/project/views/renter/dashboard.php">Back to Dashboard</a>';
 }
+require_once __DIR__ . '/../layouts/header.php';
 ?>
 </p>
 
@@ -138,3 +139,7 @@ if ($_SESSION['role'] === 'admin') {
 
 </body>
 </html>
+<?php
+// Include footer
+require_once __DIR__ . '/../layouts/footer.php';
+?>

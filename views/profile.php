@@ -20,8 +20,10 @@ if (isset($_POST['update_profile'])) {
 
     if ($name !== '' && in_array($role, ['buyer','renter'])) {
         $userModel->updateProfile($_SESSION['user_id'], $name, $role);
-        $_SESSION['role'] = $role; // update session role
+        $_SESSION['name'] = $name;   
+        $_SESSION['role'] = $role;   
         $success = "Profile updated successfully!";
+
         $user['name'] = $name;
         $user['role'] = $role;
     } else {
@@ -41,6 +43,7 @@ if (isset($_POST['change_password'])) {
         $error = "Passwords do not match or empty.";
     }
 }
+require_once __DIR__ . '/../layouts/header.php';
 ?>
 
 <!DOCTYPE html>
@@ -85,3 +88,7 @@ if (isset($_POST['change_password'])) {
 
 </body>
 </html>
+<?php
+// Include footer
+require_once __DIR__ . '/../layouts/footer.php';
+?>

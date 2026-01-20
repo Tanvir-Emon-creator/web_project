@@ -18,6 +18,7 @@ if (isset($_SESSION['success'])) {
     echo "<p style='color:green'>" . $_SESSION['success'] . "</p>";
     unset($_SESSION['success']);
 }
+require_once __DIR__ . '/../layouts/header.php';
 ?>
 
 <form method="POST" action="../../controllers/AuthController.php">
@@ -36,3 +37,7 @@ if (isset($_SESSION['success'])) {
 
 </body>
 </html>
+<?php
+// Include footer
+require_once __DIR__ . '/../layouts/footer.php';
+?>

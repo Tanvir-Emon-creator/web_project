@@ -29,6 +29,7 @@ $conversation = [];
 if ($selected_user_id) {
     $conversation = $messageModel->getConversation($_SESSION['user_id'], $selected_user_id);
 }
+require_once __DIR__ . '/../layouts/header.php';
 ?>
 
 <!DOCTYPE html>
@@ -71,3 +72,7 @@ if ($selected_user_id) {
 
 </body>
 </html>
+<?php
+// Include footer
+require_once __DIR__ . '/../layouts/footer.php';
+?>

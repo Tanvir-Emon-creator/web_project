@@ -1,48 +1,56 @@
-<?php
-session_start();
-$role = $_SESSION['role'] ?? null;
-?>
-
+ 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Property Buy & Rent Management</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<h1>Welcome to Property Buy & Rent Management</h1>
 
-<?php if (!$role): ?>
-    <p><a href="views/auth/login.php">Login</a></p>
-    <p><a href="views/auth/register.php">Register (Buyer/Renter)</a></p>
-<?php else: ?>
-    <p>Hello, <?= $_SESSION['name'] ?> (<?= ucfirst($role) ?>)</p>
+<!-- HEADER -->
+<header class="navbar">
+    <div class="logo">🏠 PropertyHub</div>
+    <div class="nav-links">
+        <a href="views/auth/login.php">Login</a>
+        <a href="views/auth/register.php" class="btn">Register</a>
+    </div>
+</header>
 
-    <?php if ($role === 'admin'): ?>
-        <ul>
-            <li><a href="views/admin/dashboard.php">Admin Dashboard</a></li>
-            <li><a href="views/admin/add_property.php">Add Property</a></li>
-            <li><a href="views/admin/properties.php">View All Properties</a></li>
-            <li><a href="views/admin/requests.php">Property Requests</a></li>
-            <li><a href="views/admin/messages.php">User Messages</a></li>
-        </ul>
-    <?php elseif ($role === 'buyer'): ?>
-        <ul>
-            <li><a href="views/buyer/dashboard.php">Buyer Dashboard</a></li>
-            <li><a href="views/buyer/browse_properties.php">Browse Properties</a></li>
-            <li><a href="views/buyer/my_requests.php">My Requests</a></li>
-            <li><a href="views/contact_admin.php">Contact Admin</a></li>
-        </ul>
-    <?php elseif ($role === 'renter'): ?>
-        <ul>
-            <li><a href="views/renter/dashboard.php">Renter Dashboard</a></li>
-            <li><a href="views/renter/browse_properties.php">Browse Properties</a></li>
-            <li><a href="views/renter/my_requests.php">My Requests</a></li>
-            <li><a href="views/contact_admin.php">Contact Admin</a></li>
-        </ul>
-    <?php endif; ?>
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-text">
+        <h1>Find Your Perfect Property</h1>
+        <p>
+            Buy or rent properties easily with our secure and user-friendly
+            property management system.
+        </p>
+        <a href="views/auth/login.php" class="btn-large">Get Started</a>
+    </div>
 
-    <p><a href="controllers/AuthController.php?action=logout">Logout</a></p>
-<?php endif; ?>
+    <div class="slider">
+        <div class="slides">
+            <img src="assets/images/house1.jpg">
+            <img src="assets/images/house2.jpg">
+            <img src="assets/images/house3.jpg">
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about">
+    <h2>About This Project</h2>
+    <p>
+        This Property Buy & Rent Management System allows admins to manage properties,
+        buyers and renters to browse listings, contact admins, send requests, and
+        communicate securely.
+    </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© <?= date("Y") ?> PropertyHub | Web Technologies Project</p>
+</footer>
 
 </body>
 </html>

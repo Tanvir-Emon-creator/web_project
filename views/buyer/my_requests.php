@@ -18,6 +18,7 @@ $stmt = $conn->prepare("
 ");
 $stmt->execute([':uid'=>$user_id]);
 $requests = $stmt->fetchAll(PDO::FETCH_ASSOC);
+require_once __DIR__ . '/../layouts/header.php';
 ?>
 
 <!DOCTYPE html>
@@ -52,3 +53,7 @@ $requests = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 </body>
 </html>
+<?php
+// Include footer
+require_once __DIR__ . '/../layouts/footer.php';
+?>

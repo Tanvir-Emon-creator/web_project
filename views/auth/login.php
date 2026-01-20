@@ -13,6 +13,7 @@ if (isset($_SESSION['error'])) {
     echo "<p style='color:red'>" . $_SESSION['error'] . "</p>";
     unset($_SESSION['error']);
 }
+require_once __DIR__ . '/../layouts/header.php';
 ?>
 
 <form method="POST" action="../../controllers/AuthController.php">
@@ -23,3 +24,7 @@ if (isset($_SESSION['error'])) {
 
 </body>
 </html>
+<?php
+// Include footer
+require_once __DIR__ . '/../layouts/footer.php';
+?>

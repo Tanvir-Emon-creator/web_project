@@ -1,0 +1,39 @@
+/* DEFAULT VARIABLES */
+:root {
+    --bg: #f5f7fa;
+    --text: #1f2937;
+    --card: #ffffff;
+    --nav: #1e293b;
+    --btn: #2563eb;
+}
+
+/* DARK MODE */
+body.dark {
+    --bg: #0f172a;
+    --text: #e5e7eb;
+    --card: #1e293b;
+    --nav: #020617;
+    --btn: #38bdf8;
+}
+
+/* GLOBAL STYLES */
+body {
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
+}
+
+.card {
+    background: var(--card);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.navbar {
+    background: var(--nav);
+}
+
+button, .btn {
+    background: var(--btn);
+    color: white;
+}

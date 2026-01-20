@@ -4,6 +4,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'renter') {
     header("Location: ../auth/login.php");
     exit;
 }
+require_once __DIR__ . '/../layouts/header.php';
 ?>
 
 <h2>Renter Dashboard</h2>
@@ -17,3 +18,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'renter') {
     <li><a href="my_requests.php">My Requests</a></li>
     <li><a href="../../controllers/AuthController.php?action=logout">Logout</a></li>
 </ul>
+<?php
+// Include footer
+require_once __DIR__ . '/../layouts/footer.php';
+?>
